@@ -27,7 +27,7 @@ import {
   IframeContainer,
   S100Logo,
   BodyContainer,
-  SeeMoreButton,
+  ExpandButton,
   Title,
   CompetitorRow,
   CompetitorCard,
@@ -94,12 +94,12 @@ const EventPage = () => {
         <div className="dates-and-price">
           <div className="row">
             <i className="fa fa-clock-o" aria-hidden="true"></i>
-            6pm, Thursday July 30, California (PST) & 11am, Friday July 31,
+            6pm, Thursday August 6, California (PST) & 11am, Friday August 7,
             QLD/NSW/VIC (AEST)
           </div>
-          <div className="row">
+          {/* <div className="row">
             & at 11am, Friday July 24, QLD/NSW/Vic (AEST)
-          </div>
+          </div> */}
           <div className="row">
             <i className="fa fa-ticket" aria-hidden="true"></i>
             $14.99
@@ -144,8 +144,6 @@ const EventPage = () => {
         }}
       >
         <iframe
-          width="100%"
-          height="100%"
           id="scaled-frame"
           src={`https://bsview.s3-us-west-2.amazonaws.com/index_stab100.html?user=${emailAddress}`}
           frameBorder="no"
@@ -260,7 +258,6 @@ const EventPage = () => {
       <PageContainer>
         <BodyContainer>
           <Main>
-            {/* <Ifr></Ifr> */}
             <EventDetails>{renderCTA()}</EventDetails>
 
             <div
@@ -268,6 +265,14 @@ const EventPage = () => {
               className="inplayer-paywall preview-frame"
             ></div>
             {renderScoring(email)}
+            <div>
+              {/* <ExpandButton
+                onClick={() => window.location.replace("/event/#giveaway")}
+              >
+                Expand Scoring
+              </ExpandButton> */}
+            </div>
+
             <MobileNavBar>{renderNavMenu()}</MobileNavBar>
             <MobileView>
               <EventDetails>{renderGiveAway()}</EventDetails>
@@ -393,8 +398,8 @@ const EventPage = () => {
                   <FAQCard>
                     <h4>When is the event live?</h4>
                     <p>
-                      6pm, Thursday July 30, California (PST) & 11am, Friday
-                      July 31, QLD/NSW/VIC (AEST){" "}
+                      6pm, Thursday August 6, California (PST) & 11am, Friday
+                      August 7, QLD/NSW/VIC (AEST){" "}
                     </p>{" "}
                   </FAQCard>
 
