@@ -694,7 +694,7 @@ const Footer = styled.div`
   }
 `;
 
-const SeeMoreButton = styled.button`
+const SeeMoreButton = styled.a`
   text-decoration: underline;
   border: none;
   background-color: white;

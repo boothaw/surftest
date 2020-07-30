@@ -125,9 +125,7 @@ const EventPage = () => {
           but if you do a good job, you can win a custom …Lost Surfboards
           quiver.
         </SecondaryText>
-        <SeeMoreButton
-          onClick={() => window.location.replace("/event/#giveaway")}
-        >
+        <SeeMoreButton href="/event/#giveaway">
           Tap your email below to be entered.
         </SeeMoreButton>
       </>
