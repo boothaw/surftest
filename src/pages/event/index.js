@@ -37,12 +37,14 @@ import {
   MobileNavBar,
   FAQCard,
   Footer,
+  SeeMoreButton,
 } from "./styles";
 
 const EventPage = () => {
   const [height, setHeight] = useState(null);
   const [activeTab, setActiveTab] = useState("Scoring");
   const [loading, setLoading] = useState(true);
+  const [typing, setTyping] = useState(true);
   const [isRegistered, setIsRegistered] = useState(false);
   const [email, setEmail] = useState("");
 
@@ -118,17 +120,16 @@ const EventPage = () => {
           </div>
         </div>
         <SecondaryText>
-          In Surf100, clips are scored out of 100 points (whole numbers only, no
-          decimals). A decent wave might be worth 50 points, a solid wave is 70,
-          and a barn-burner could be 90. For a surfer to earn 100 points on a
-          clip, they better put your goddamn chin on the linoleum. Oh, and the
-          “best” judge of the event will win a custom Mayhem/...Lost quiver.
+          Clips are scored out of 100 points, so take what you’d give a wave out
+          of 10 and move the decimal one to the right. It’s not rocket surgery,
+          but if you do a good job, you can win a custom …Lost Surfboards
+          quiver.
         </SecondaryText>
-        <ButtonSecondary
+        <SeeMoreButton
           onClick={() => window.location.replace("/event/#giveaway")}
         >
-          More on that below.
-        </ButtonSecondary>
+          Tap your email below to be entered.
+        </SeeMoreButton>
       </>
     );
   };
@@ -188,39 +189,6 @@ const EventPage = () => {
         </MenuItem>
       </MenuBar>
     );
-  };
-
-  // Random component
-  const Completionist = () => <span>Start Watching!</span>;
-
-  // Renderer callback with condition
-  const renderer = ({ hours, minutes, seconds, completed }) => {
-    if (completed) {
-      // Render a completed state
-      return <Completionist />;
-    } else {
-      // Render a countdown
-      return (
-        <span>
-          {hours}:{minutes}:{seconds}
-        </span>
-      );
-    }
-  };
-
-  const calculateTimeLeft = () => {
-    let year = new Date().getFullYear();
-    const difference = +new Date(`${year}-10-1`) - +new Date();
-    let timeLeft = {};
-    timeLeft = {
-      days: Math.floor(difference / (1000 * 60 * 60 * 24)),
-      hours: Math.floor((difference / (1000 * 60 * 60)) % 24),
-      minutes: Math.floor((difference / 1000 / 60) % 60),
-      seconds: Math.floor((difference / 1000) % 60),
-    };
-
-    return timeLeft;
-    console.log("time left", { timeLeft });
   };
 
   return (
@@ -361,14 +329,17 @@ const EventPage = () => {
                     </div>
                   ) : (
                     <div>
-                      <Input
-                        onChange={(e) => setEmail(e.currentTarget.value)}
-                        value={email}
-                        placeholder="Email address"
-                      />
-                      <ButtonSecondary onClick={handleEmailSave}>
-                        Submit
-                      </ButtonSecondary>
+                      <form>
+                        <Input
+                          onSubmit={(e) => setEmail(e.currentTarget.value)}
+                          value={email}
+                          placeholder="Email address"
+                        />
+
+                        <ButtonSecondary onClick={handleEmailSave}>
+                          Submit
+                        </ButtonSecondary>
+                      </form>
                     </div>
                   )}
                 </SectionCopy>

@@ -257,6 +257,9 @@ const MainSection = styled.div`
 `;
 
 const SectionBlock = styled.div`
+  margin-top: -85px;
+  padding-top: 85px;
+  display: inline-block;
   margin-bottom: 48px;
 `;
 
@@ -668,6 +671,7 @@ const Footer = styled.div`
   padding: 16px;
   display: flex;
   justify-content: center;
+  min-width: 420px;
 
   h4 {
     color: #f0f0f0;
@@ -690,6 +694,22 @@ const Footer = styled.div`
   }
 `;
 
+const SeeMoreButton = styled.button`
+  text-decoration: underline;
+  border: none;
+  background-color: white;
+  color: black;
+  margin: 0;
+  margin-bottom: 8px;
+  padding: 0;
+  cursor: pointer;
+  transition: 0.2s ease;
+  ${(props) => props.mb && `margin-bottom: ${props.mb};`}
+  & {
+    transform: scale(1.02);
+  }
+`;
+
 export {
   Nav,
   PageContainer,
@@ -701,6 +721,7 @@ export {
   MenuItem,
   MainSection,
   Title,
+  SeeMoreButton,
   SecondaryText,
   SubTitle,
   SectionTitle,
