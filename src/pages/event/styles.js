@@ -138,6 +138,7 @@ const EventDetails = styled.div`
   box-shadow: 0px 1px 2px rgba(44, 50, 66, 0.08);
   border-radius: 8px;
   margin-bottom: 16px;
+  margin-top: 16px;
 
   .dates-and-price {
     margin-bottom: 12px;
@@ -572,12 +573,13 @@ const SorryBanner = styled.div`
   }
 `;
 
-const IframeContainer = styled.div`
+const IframeContainerSmall = styled.div`
   position: relative;
   width: 100%;
   max-width: 875px;
   margin-left: auto;
   margin-right: auto;
+  border-radius: 5px;
 
   #scaled-frame {
     position: absolute;
@@ -590,9 +592,38 @@ const IframeContainer = styled.div`
     margin-bottom: 24px;
   }
 
-  @media (min-width: 900px) {
-    height: 325px;
+  // @media (min-width: 900px) {
+  //   height: 325px;
+  // }
+
+  @media (max-width: 900px) {
+    min-height: 895px;
+    // border: 1px solid pink;
   }
+`;
+
+const IframeContainerBig = styled.div`
+  position: relative;
+  width: 100%;
+  max-width: 875px;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 5px;
+
+  #scaled-frame {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    margin-bottom: 24px;
+  }
+
+  // @media (min-width: 900px) {
+  //   height: 925px;
+  // }
 
   @media (max-width: 900px) {
     min-height: 895px;
@@ -634,6 +665,10 @@ const ExpandButton = styled.button`
   @media (min-width: 900px) {
     margin-left: 24px;
     margin-right: 24px;
+  }
+
+  @media (max-width: 900px) {
+    display: none;
   }
 `;
 
@@ -738,7 +773,8 @@ export {
   DesktopView,
   StickyScroll,
   SorryBanner,
-  IframeContainer,
+  IframeContainerSmall,
+  IframeContainerBig,
   S100Logo,
   BodyContainer,
   ExpandButton,
