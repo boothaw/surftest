@@ -42,7 +42,6 @@ import {
 const EventPage = () => {
   const [activeTab, setActiveTab] = useState("Scoring");
   const [loading, setLoading] = useState(true);
-  const [isShowing, setIsShowing] = useState(false);
   const [isRegistered, setIsRegistered] = useState(false);
   const [email, setEmail] = useState("");
 
@@ -69,21 +68,6 @@ const EventPage = () => {
       }, 1000);
     }
   }, []);
-
-  const toggle = () => {
-    console.log("showing status", isShowing);
-    setIsShowing(isShowing === "true" ? "false" : "true");
-
-    // return renderChange();
-  };
-
-  const renderChange = () => {
-    return (
-      <div>
-        {(isShowing && renderExpanded()) || (!isShowing && renderContracted())}
-      </div>
-    );
-  };
 
   const handleEmailSave = () => {
     // VALIDATE
@@ -145,34 +129,13 @@ const EventPage = () => {
     );
   };
 
-  const renderContracted = (emailAddress) => {
-    return (
-      <IframeContainerSmall
-        style={{
-          maxWidth: 875,
-          width: "100%",
-          height: 325,
-          overflow: "auto",
-        }}
-      >
-        <iframe
-          id="scaled-frame"
-          src={`https://bsview.s3-us-west-2.amazonaws.com/index_stab100.html?user=${emailAddress}`}
-          frameBorder="no"
-          allowtransparency="true"
-          allowtullscreen="true"
-        ></iframe>
-      </IframeContainerSmall>
-    );
-  };
-
-  const renderExpanded = (emailAddress) => {
+  const renderScoring = (emailAddress) => {
     return (
       <IframeContainerBig
         style={{
           maxWidth: 875,
           width: "100%",
-          height: 1200,
+
           overflow: "auto",
         }}
       >
@@ -186,49 +149,6 @@ const EventPage = () => {
       </IframeContainerBig>
     );
   };
-
-  // const renderScoring = (emailAddress) => {
-  //   if (isShowing) {
-  //     return (
-  //       <IframeContainerBig
-  //         style={{
-  //           maxWidth: 875,
-  //           width: "100%",
-  //           height: 925,
-  //           overflow: "auto",
-  //         }}
-  //       >
-  //         <iframe
-  //           id="scaled-frame"
-  //           src={`https://bsview.s3-us-west-2.amazonaws.com/index_stab100.html?user=${emailAddress}`}
-  //           frameBorder="no"
-  //           allowtransparency="true"
-  //           allowtullscreen="true"
-  //         ></iframe>
-  //       </IframeContainerBig>
-  //     );
-  //   }
-  //   if (!isShowing) {
-  //     return (
-  //       <IframeContainerSmall
-  //         style={{
-  //           maxWidth: 875,
-  //           width: "100%",
-  //           height: 325,
-  //           overflow: "auto",
-  //         }}
-  //       >
-  //         <iframe
-  //           id="scaled-frame"
-  //           src={`https://bsview.s3-us-west-2.amazonaws.com/index_stab100.html?user=${emailAddress}`}
-  //           frameBorder="no"
-  //           allowtransparency="true"
-  //           allowtullscreen="true"
-  //         ></iframe>
-  //       </IframeContainerSmall>
-  //     );
-  //   }
-  // };
 
   const renderNavMenu = () => {
     return (
@@ -308,13 +228,7 @@ const EventPage = () => {
               className="inplayer-paywall preview-frame"
             ></div>
 
-            <div>
-              <ExpandButton onClick={toggle}>
-                {isShowing ? "Contract Scoring" : "Expand Scoring"}
-              </ExpandButton>
-              {(isShowing && renderExpanded()) ||
-                (!isShowing && renderContracted())}
-            </div>
+            <div>{renderScoring()}</div>
 
             <MobileNavBar>{renderNavMenu()}</MobileNavBar>
             <MobileView>

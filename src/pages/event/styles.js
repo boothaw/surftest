@@ -621,9 +621,9 @@ const IframeContainerBig = styled.div`
     margin-bottom: 24px;
   }
 
-  // @media (min-width: 900px) {
-  //   height: 925px;
-  // }
+  @media (min-width: 900px) {
+    height: 925px;
+  }
 
   @media (max-width: 900px) {
     min-height: 895px;
