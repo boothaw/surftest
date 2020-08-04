@@ -343,7 +343,7 @@ const SplashPage = () => {
       {/* <div id="inplayer">
         <div id="inplayer-109708" className="inplayer-paywall preview-frame" />
       </div> */}
-      <SorryBanner>Times are tough. If you want to watch and can't swing it financially, hit us up with your name, age and a bit about yourself.</SorryBanner>
+      <SorryBanner>Times are tough. If you want to watch and can't swing it, email us with your name, age and a bit about yourself.</SorryBanner>
       <Footer>
         <a href="/">
           <img src={s100white} />

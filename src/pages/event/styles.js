@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 const Nav = styled.div`
-  width: 100vw;
+  width: 100%;
   height: 72px;
   background-color: #fff;
   box-shadow: 0px 1px 2px rgba(44, 50, 66, 0.08);
@@ -9,7 +9,7 @@ const Nav = styled.div`
   align-items: center;
   justify-content: space-between;
   padding: 0px 32px;
-  min-width: 420px;
+  min-width: 375px;
   img {
     height: 30px;
   }
@@ -54,7 +54,7 @@ const PageContainer = styled.div`
   padding: 16px 16px 0;
   margin-left: auto;
   margin-right: auto;
-  min-width: 420px;
+  min-width: 375px;
 `;
 
 const BodyContainer = styled.div`
@@ -247,13 +247,14 @@ font-size: 12px;
 `;
 
 const MainSection = styled.div`
-  padding: 24px 24px;
+  padding: 24px 24px 0 24px;
   margin-top: 16px;
   background-color: #fff;
   box-shadow: 0px 1px 2px rgba(44, 50, 66, 0.08);
   border-radius: 8px;
   @media (max-width: 900px) {
     padding-top: 24px;
+    
   }
 `;
 
@@ -557,8 +558,9 @@ const StickyScroll = styled.div`
 `;
 
 const SorryBanner = styled.div`
+  min-width: 375px;
   min-height: 32px;
-  padding: 8px 12px;
+  padding: 8px 16px;
   text-align: center;
   background-color: #e74c3c;
   display: flex;
@@ -706,7 +708,7 @@ const Footer = styled.div`
   padding: 16px;
   display: flex;
   justify-content: center;
-  min-width: 420px;
+  min-width: 375px;
 
   h4 {
     color: #f0f0f0;

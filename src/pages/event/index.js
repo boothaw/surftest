@@ -37,6 +37,7 @@ import {
   FAQCard,
   Footer,
   SeeMoreButton,
+  SorryBanner
 } from "./styles";
 
 const EventPage = () => {
@@ -573,6 +574,8 @@ const EventPage = () => {
           </Panel>
         </BodyContainer>
       </PageContainer>
+      <SorryBanner>Times are tough. If you want to watch and can't swing it, email us with your name, age and a bit about yourself.</SorryBanner>
+
       <Footer>
         <div>
           <h4>Have more questions? Contact Us.</h4>
