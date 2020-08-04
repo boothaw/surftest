@@ -562,7 +562,7 @@ const SorryBanner = styled.div`
   min-height: 32px;
   padding: 8px 16px;
   text-align: center;
-  background-color: #e74c3c;
+  background-color: red;
   display: flex;
   align-items: center;
   justify-content: space-evenly;
