@@ -137,7 +137,7 @@ const EventDetails = styled.div`
   background-color: #fff;
   box-shadow: 0px 1px 2px rgba(44, 50, 66, 0.08);
   border-radius: 8px;
-  margin-bottom: 16px;
+  margin-bottom: 32px;
   margin-top: 16px;
 
   .dates-and-price {
@@ -186,20 +186,20 @@ const EventDetails = styled.div`
     }
   }
 
-  .hosts100 {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 76px;
-    width: 76px;
-    border: 1px solid #f1f2f5;
-    box-sizing: border-box;
-    box-shadow: 0px 1px 2px rgba(44, 50, 66, 0.08);
-    border-radius: 8px;
-    margin-right: 12px;
-    img {
-      height: 30px;
-    }
+  // .hosts100 {
+  //   display: flex;
+  //   align-items: center;
+  //   justify-content: center;
+  //   height: 76px;
+  //   width: 76px;
+  //   border: 1px solid #f1f2f5;
+  //   box-sizing: border-box;
+  //   box-shadow: 0px 1px 2px rgba(44, 50, 66, 0.08);
+  //   border-radius: 8px;
+  //   margin-right: 12px;
+  //   img {
+  //     height: 30px;
+  //   }
   }
 `;
 
@@ -240,6 +240,7 @@ font-size: 12px;
 & {
   cursor: pointer;
 }
+
 @media (max-width: 900px) {
   padding: 8px;
   font-size: 12px;
@@ -263,6 +264,7 @@ const SectionBlock = styled.div`
   padding-top: 85px;
   display: inline-block;
   margin-bottom: 48px;
+
 `;
 
 const Title = styled.h2`
@@ -535,13 +537,13 @@ const MobileView = styled.div`
     display: none;
   }
 
-  @media (max-width: 1205px) {
-    display: row;
-    grid-template-columns: 1fr 1fr;
-    grid-column-gap: 16px;
-    grid-row-gap: 16px;
-    margin-top: 16px;
-  }
+  // @media (max-width: 1205px) {
+  //   display: row;
+  //   grid-template-columns: 1fr 1fr;
+  //   grid-column-gap: 16px;
+  //   grid-row-gap: 16px;
+  //   margin-top: 16px;
+  // }
 `;
 
 const DesktopView = styled.div`
@@ -624,7 +626,7 @@ const IframeContainerBig = styled.div`
   }
 
   @media (min-width: 900px) {
-    height: 925px;
+    height: 625px;
   }
 
   @media (max-width: 900px) {
@@ -740,10 +742,10 @@ const SeeMoreButton = styled.a`
   margin-bottom: 8px;
   padding: 0;
   cursor: pointer;
-  transition: 0.2s ease;
-  ${(props) => props.mb && `margin-bottom: ${props.mb};`}
-  & {
-    transform: scale(1.02);
+  // transition: 0.2s ease;
+  // ${(props) => props.mb && `margin-bottom: ${props.mb};`}
+  // & {
+  //   transform: scale(1.02);
   }
 `;
 

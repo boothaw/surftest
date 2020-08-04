@@ -152,6 +152,7 @@ const EventPage = () => {
     return (
       <MenuBar>
         <MenuItem
+
           href="/event/#concept"
           onClick={() => setActiveTab("Concept")}
           active={activeTab === "Concept"}
