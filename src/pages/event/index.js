@@ -579,7 +579,7 @@ const EventPage = () => {
       <Footer>
         <div>
           <h4>Have more questions? Contact Us.</h4>
-          <a href="mailto: questions@surf100.tv">questions@surf100.tv</a>
+          <a href="mailto: surf100@stabmag.com">surf100@stabmag.com</a>
         </div>
       </Footer>
     </>

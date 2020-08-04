@@ -350,7 +350,7 @@ const SplashPage = () => {
         </a>
         <div>
           <h4>Have more questions? Contact Us.</h4>
-          <a href="mailto: surf100@stabmag.com">questions@surf100.tv</a>
+          <a href="mailto: surf100@stabmag.com">surf100@stabmag.com</a>
         </div>
         <a target="_blank" href="https://www.instagram.com/surf100.tv/?hl=en">
           <img src={insta} />
