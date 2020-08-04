@@ -27,6 +27,7 @@ import {
   PageContainer,
   VidSection,
   NavSection,
+  SorryBanner
 } from "./styles";
 
 import Modal from "../../components/modal/Modal";
@@ -98,7 +99,7 @@ const SplashPage = () => {
 
         <TitleSection>
           <h2>An audience-judged, 100-minute wave riding demonstration.</h2>
-          <h2>6pm (PST) July 30, 2020</h2>
+          <h2>6pm (PST) August 6, 2020</h2>
         </TitleSection>
         <VidSection>
           <VidContainer>
@@ -194,10 +195,10 @@ const SplashPage = () => {
         <ShowContent>
           <h2>Show Time:</h2>
           <TimeUs>
-            <p>6pm, Thursday July 30, California (PST)</p>
+            <p>6pm, Thursday August 6, California (PST)</p>
           </TimeUs>
           <TimeOz>
-            <p>11am, Friday July 31, QLD/NSW/VIC (AEST)</p>
+            <p>11am, Friday August 7, QLD/NSW/VIC (AEST)</p>
           </TimeOz>
         </ShowContent>
       </ShowTime>
@@ -207,7 +208,7 @@ const SplashPage = () => {
           <ColumnOne>
             <h4>When is the event live?</h4>
             <p>
-              6pm, Thursday July 30, California (PST) & 11am, Friday July 31,
+              6pm, Thursday August 6, California (PST) & 11am, Friday August 6,
               QLD/NSW/VIC (AEST){" "}
             </p>
 
@@ -342,6 +343,7 @@ const SplashPage = () => {
       {/* <div id="inplayer">
         <div id="inplayer-109708" className="inplayer-paywall preview-frame" />
       </div> */}
+      <SorryBanner>Times are tough. If you want to watch and can't swing it financially, hit us up with your name, age and a bit about yourself.</SorryBanner>
       <Footer>
         <a href="/">
           <img src={s100white} />

@@ -96,9 +96,6 @@ const EventPage = () => {
             6pm, Thursday August 6, California (PST) & 11am, Friday August 7,
             QLD/NSW/VIC (AEST)
           </div>
-          {/* <div className="row">
-            & at 11am, Friday July 24, QLD/NSW/Vic (AEST)
-          </div> */}
           <div className="row">
             <i className="fa fa-ticket" aria-hidden="true"></i>
             $14.99
@@ -317,20 +314,20 @@ const EventPage = () => {
                       <h3>Registration Complete!</h3>
                     </div>
                   ) : (
-                    <div>
-                      <form>
-                        <Input
-                          onChange={(e) => setEmail(e.currentTarget.value)}
-                          value={email}
-                          placeholder="Email address"
-                        />
+                      <div>
+                        <form>
+                          <Input
+                            onChange={(e) => setEmail(e.currentTarget.value)}
+                            value={email}
+                            placeholder="Email address"
+                          />
 
-                        <ButtonSecondary onClick={handleEmailSave}>
-                          Submit
+                          <ButtonSecondary onClick={handleEmailSave}>
+                            Submit
                         </ButtonSecondary>
-                      </form>
-                    </div>
-                  )}
+                        </form>
+                      </div>
+                    )}
                 </SectionCopy>
               </SectionBlock>
 
