@@ -74,7 +74,7 @@ const EventPage = () => {
 
   const toggle = () => {
     console.log("showing status", isShowing);
-    setIsShowing(isShowing === "true" ? "false" : "true");
+    setIsShowing(!isShowing);
 
   };
 
