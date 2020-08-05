@@ -78,13 +78,6 @@ const EventPage = () => {
 
   };
 
-  const renderChange = () => {
-    return (
-      <div>
-        {(!isShowing && renderContracted()) || (isShowing && renderExpanded())}
-      </div>
-    );
-  };
 
   const handleEmailSave = () => {
     // VALIDATE
@@ -143,40 +136,6 @@ const EventPage = () => {
     );
   };
 
-  const renderContracted = (emailAddress) => {
-    return (
-      <IframeContainerSmall
-      // style={{
-      //   maxWidth: 875,
-      //   width: "100%",
-      //   height: 325,
-      //   overflow: "auto",
-      // }}
-      >
-        <iframe
-          id="scaled-frame"
-          src={`https://bsview.s3-us-west-2.amazonaws.com/index_stab100.html?user=${emailAddress}`}
-          frameBorder="no"
-          allowtransparency="true"
-          allowtullscreen="true"
-        ></iframe>
-      </IframeContainerSmall>
-    );
-  };
-
-  const renderExpanded = (emailAddress) => {
-    return (
-      <IframeContainerBig>
-        <iframe
-          id="scaled-frame"
-          src={`https://bsview.s3-us-west-2.amazonaws.com/index_stab100.html?user=${emailAddress}`}
-          frameBorder="no"
-          allowtransparency="true"
-          allowtullscreen="true"
-        ></iframe>
-      </IframeContainerBig>
-    );
-  };
 
   const renderScoring = (emailAddress) => {
     // {(!isShowing && renderContracted()) || (isShowing && renderExpanded())}
@@ -188,7 +147,7 @@ const EventPage = () => {
           style={{
             maxWidth: 875,
             width: "100%",
-            height: 825,
+            height: 925,
             overflow: "auto"
           }}
         >
@@ -304,12 +263,12 @@ const EventPage = () => {
               className="inplayer-paywall preview-frame"
             ></div>
 
-            {/* <div >
+            <div >
               <ExpandButton onClick={toggle}>
                 {isShowing ? "Collapse Scoring" : "Expand Scoring"}
               </ExpandButton>
               {renderScoring()}
-            </div> */}
+            </div>
 
 
             <MobileNavBar>{renderNavMenu()}</MobileNavBar>
