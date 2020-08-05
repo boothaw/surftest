@@ -45,6 +45,8 @@ const EventPage = () => {
   const [loading, setLoading] = useState(true);
   const [isRegistered, setIsRegistered] = useState(false);
   const [email, setEmail] = useState("");
+  const [isShowing, setIsShowing] = useState(false);
+
 
   useEffect(() => {
     const emailRegistered = localStorage.getItem("SURF100.email");
@@ -69,6 +71,20 @@ const EventPage = () => {
       }, 1000);
     }
   }, []);
+
+  const toggle = () => {
+    console.log("showing status", isShowing);
+    setIsShowing(isShowing === "true" ? "false" : "true");
+
+  };
+
+  const renderChange = () => {
+    return (
+      <div>
+        {(!isShowing && renderContracted()) || (isShowing && renderExpanded())}
+      </div>
+    );
+  };
 
   const handleEmailSave = () => {
     // VALIDATE
@@ -127,16 +143,30 @@ const EventPage = () => {
     );
   };
 
-  const renderScoring = (emailAddress) => {
+  const renderContracted = (emailAddress) => {
     return (
-      <IframeContainerBig
-        style={{
-          maxWidth: 875,
-          width: "100%",
-
-          overflow: "auto",
-        }}
+      <IframeContainerSmall
+      // style={{
+      //   maxWidth: 875,
+      //   width: "100%",
+      //   height: 325,
+      //   overflow: "auto",
+      // }}
       >
+        <iframe
+          id="scaled-frame"
+          src={`https://bsview.s3-us-west-2.amazonaws.com/index_stab100.html?user=${emailAddress}`}
+          frameBorder="no"
+          allowtransparency="true"
+          allowtullscreen="true"
+        ></iframe>
+      </IframeContainerSmall>
+    );
+  };
+
+  const renderExpanded = (emailAddress) => {
+    return (
+      <IframeContainerBig>
         <iframe
           id="scaled-frame"
           src={`https://bsview.s3-us-west-2.amazonaws.com/index_stab100.html?user=${emailAddress}`}
@@ -146,6 +176,53 @@ const EventPage = () => {
         ></iframe>
       </IframeContainerBig>
     );
+  };
+
+  const renderScoring = (emailAddress) => {
+    // {(!isShowing && renderContracted()) || (isShowing && renderExpanded())}
+
+    if (isShowing) {
+      return (
+
+        <IframeContainerBig
+          style={{
+            maxWidth: 875,
+            width: "100%",
+            height: 825,
+            overflow: "auto"
+          }}
+        >
+          <iframe
+            id="scaled-frame"
+            src={`https://bsview.s3-us-west-2.amazonaws.com/index_stab100.html?user=${emailAddress}`}
+            frameBorder="no"
+            allowtransparency="true"
+            allowtullscreen="true"
+          ></iframe>
+        </IframeContainerBig>
+
+      );
+
+    }
+    return (
+      <IframeContainerSmall
+        style={{
+          maxWidth: 875,
+          width: "100%",
+          height: 325,
+          overflow: "auto"
+        }} >
+        <iframe
+          id="scaled-frame"
+          src={`https://bsview.s3-us-west-2.amazonaws.com/index_stab100.html?user=${emailAddress}`}
+          frameBorder="no"
+          allowtransparency="true"
+          allowtullscreen="true"
+        ></iframe>
+      </IframeContainerSmall >
+    );
+
+
   };
 
   const renderNavMenu = () => {
@@ -227,7 +304,13 @@ const EventPage = () => {
               className="inplayer-paywall preview-frame"
             ></div>
 
-            <div>{renderScoring()}</div>
+            {/* <div >
+              <ExpandButton onClick={toggle}>
+                {isShowing ? "Collapse Scoring" : "Expand Scoring"}
+              </ExpandButton>
+              {renderScoring()}
+            </div> */}
+
 
             <MobileNavBar>{renderNavMenu()}</MobileNavBar>
             <MobileView>
@@ -561,6 +644,15 @@ const EventPage = () => {
                     </p>
                   </FAQCard>
 
+                  <FAQCard>
+                    <h4>What if I can’t afford the pay per view?
+                  </h4>
+                    <p>Email us at <a href="mailto: surf100@stabmag.com">surf100@stabmag.com</a>, tell us your name, age, where you’re from, why you can’t pay and we’ll send you a code.
+                      </p>
+                  </FAQCard>
+
+
+
                   {/* </FAQCard> */}
                 </SectionCopy>
               </SectionBlock>
@@ -575,7 +667,7 @@ const EventPage = () => {
           </Panel>
         </BodyContainer>
       </PageContainer>
-      <SorryBanner>Times are tough. If you want to watch and can't swing it, email us with your name, age and a bit about yourself.</SorryBanner>
+      {/* <SorryBanner>Times are tough. If you want to watch and can't swing it, email us with your name, age and a bit about yourself.</SorryBanner> */}
 
       <Footer>
         <div>

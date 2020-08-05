@@ -580,7 +580,7 @@ const SorryBanner = styled.div`
 const IframeContainerSmall = styled.div`
   position: relative;
   width: 100%;
-  max-width: 875px;
+  max-width: 375px;
   margin-left: auto;
   margin-right: auto;
   border-radius: 5px;

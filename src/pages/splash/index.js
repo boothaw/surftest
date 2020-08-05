@@ -271,6 +271,11 @@ const SplashPage = () => {
 
             <h4>Can I get a refund if I don’t like the show?</h4>
             <p>You can definitely ask.</p>
+
+            <h4>What if I can’t afford the pay per view?
+</h4>
+            <p>Email us at <a href="mailto: surf100@stabmag.com">surf100@stabmag.com</a>, tell us your name, age, where you’re from, why you can’t pay and we’ll send you a code.
+</p>
           </ColumnOne>
           <ColumnTwo>
             <h4>Does Dane Reynolds judge?</h4>
@@ -343,7 +348,7 @@ const SplashPage = () => {
       {/* <div id="inplayer">
         <div id="inplayer-109708" className="inplayer-paywall preview-frame" />
       </div> */}
-      <SorryBanner>Times are tough. If you want to watch and can't swing it, email us with your name, age and a bit about yourself.</SorryBanner>
+      {/* <SorryBanner>Times are tough. If you want to watch and can't swing it, email us with your name, age and a bit about yourself.</SorryBanner> */}
       <Footer>
         <a href="/">
           <img src={s100white} />
