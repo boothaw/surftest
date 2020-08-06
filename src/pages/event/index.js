@@ -260,12 +260,12 @@ const EventPage = () => {
           <Main>
             <EventDetails>{renderCTA()}</EventDetails>
 
-            {/* <div
+            <div
               id="inplayer-108337"
               className="inplayer-paywall preview-frame"
-            ></div> */}
+            ></div>
 
-            <div id="inplayer-109708" class="inplayer-paywall"></div>
+            {/* <div id="inplayer-109708" class="inplayer-paywall"></div> */}
 
 
             <div >
