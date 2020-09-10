@@ -142,6 +142,8 @@ const EventPage = () => {
   const renderScoring = (emailAddress) => {
     // {(!isShowing && renderContracted()) || (isShowing && renderExpanded())}
 
+    console.log(emailAddress)
+
     if (isShowing) {
       return (
 
@@ -258,7 +260,18 @@ const EventPage = () => {
       <PageContainer>
         <BodyContainer>
           <Main>
+            <div style={{
+              color: "white",
+              width: "100%",
+              padding: "12 px",
+              backgroundColor: "#598cc0",
+              textAlign: "center",
+            }}> Congrats! You are ready to view Surf 100. We'll start playing soon.</div>
+
+
             <EventDetails>{renderCTA()}</EventDetails>
+
+
 
             <div
               id="inplayer-108337"
