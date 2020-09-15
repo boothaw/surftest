@@ -258,11 +258,30 @@ const EventPage = () => {
         <BodyContainer>
           <Main>
             <EventDetails>{renderCTA()}</EventDetails>
-            {/* <div
-              id="inplayer-108337"
-              className="inplayer-paywall preview-frame"
-            ></div> */}
-            <div id="inplayer-108337" className="inplayer-paywall"></div>
+
+            {/* <div id="inplayer-108337" className="inplayer-paywall"></div> */}
+
+            <div
+              style={{
+                position: "relative",
+                overflow: "hidden",
+                paddingBottom: "56.25%",
+              }}
+            >
+              {" "}
+              <iframe
+                src="https://cdn.jwplayer.com/players/ubTqF6LU-0FVQ0WpJ.html"
+                width="100%"
+                height="100%"
+                frameBorder="0"
+                scrolling="auto"
+                title="Final Broadcast Full"
+                style={{ position: "absolute" }}
+                allowFullScreen
+              ></iframe>{" "}
+            </div>
+
+            {/* <script src="https://cdn.jwplayer.com/players/ubTqF6LU-0FVQ0WpJ.js"></script> */}
 
             <div>
               <ExpandButton onClick={toggle}>
@@ -593,14 +612,3 @@ const EventPage = () => {
 };
 
 export default EventPage;
-
-{
-  /* <div itemscope itemtype="https://schema.org/VideoObject">
-
-<script src="https://ssl.p.jwpcdn.com/live/channel-embed.js"></script>
-<script src="https://cdn.jwplayer.com/libraries/0FVQ0WpJ.js"></script>
-
-</div>;
-
-<script>jwLiveChannelSetup({ channelId: "4ItsVcs0" });</script>  */
-}
