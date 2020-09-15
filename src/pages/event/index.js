@@ -259,9 +259,9 @@ const EventPage = () => {
           <Main>
             <EventDetails>{renderCTA()}</EventDetails>
 
-            {/* <div id="inplayer-108337" className="inplayer-paywall"></div> */}
+            <div id="inplayer-108337" className="inplayer-paywall"></div>
 
-            <div
+            {/* <div
               style={{
                 position: "relative",
                 overflow: "hidden",
@@ -279,7 +279,7 @@ const EventPage = () => {
                 style={{ position: "absolute" }}
                 allowFullScreen
               ></iframe>{" "}
-            </div>
+            </div> */}
 
             {/* <script src="https://cdn.jwplayer.com/players/ubTqF6LU-0FVQ0WpJ.js"></script> */}
 
