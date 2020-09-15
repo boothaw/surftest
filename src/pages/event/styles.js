@@ -2,16 +2,19 @@ import styled from "styled-components";
 
 const Nav = styled.div`
   width: 100%;
-  height: 72px;
+  height: 100%;
   background-color: #fff;
   box-shadow: 0px 1px 2px rgba(44, 50, 66, 0.08);
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0px 32px;
+  padding: 8px 32px;
   min-width: 375px;
+  border-top: 8px solid #871612;
+  border-bottom: 1px solid black;
+
   img {
-    height: 30px;
+    height: 42px;
   }
   a {
     color: #000;
@@ -22,6 +25,12 @@ const Nav = styled.div`
     top: 0px;
     z-index: 3;
   }
+`;
+
+const Banner = styled.div`
+  width: 100%;
+  height: 8px;
+  background: #871612;
 `;
 
 const DesktopNavBar = styled.div`
@@ -65,11 +74,9 @@ const BodyContainer = styled.div`
   grid-template-columns: 1fr 300px;
   grid-column-gap: 16px;
   grid-row-gap: 16px;
-
-  @media (max-width: 1205px) {
+  @media (max-width: 1225px) {
     grid-template-columns: 1fr;
   }
-
   background-color: #fafafa;
 `;
 
@@ -149,12 +156,13 @@ const EventDetails = styled.div`
   .row {
     display: flex;
     align-items: center;
+
     i {
       margin-right: 4px;
+      margin-top: 6px;
+      align-self: start;
     }
-    :nth-of-type(2n) {
-      margin-left: 16px;
-    }
+
   }
   .host-banner {
     display: flex;
@@ -223,6 +231,10 @@ const MenuBar = styled.div`
   @media (max-width: 900px) {
     height: 72px;
   }
+
+  a:hover {
+    color: #871612;
+  }
 `;
 
 const MenuItem = styled.a`
@@ -236,7 +248,7 @@ padding: 0px 24px;
 color: #000;
 text-decoration: none;
 font-weight: bold;
-font-size: 12px;
+font-size: 14px;
 & {
   cursor: pointer;
 }
@@ -249,13 +261,12 @@ font-size: 12px;
 
 const MainSection = styled.div`
   padding: 24px 24px 0 24px;
-  margin-top: 16px;
+  margin: 16px 0;
   background-color: #fff;
   box-shadow: 0px 1px 2px rgba(44, 50, 66, 0.08);
   border-radius: 8px;
   @media (max-width: 900px) {
     padding-top: 24px;
-    
   }
 `;
 
@@ -264,7 +275,6 @@ const SectionBlock = styled.div`
   padding-top: 85px;
   display: inline-block;
   margin-bottom: 48px;
-
 `;
 
 const Title = styled.h2`
@@ -533,30 +543,30 @@ const ButtonSecondary = styled.button`
 const MobileView = styled.div`
   display: initial;
 
-  @media (min-width: 1205px) {
+  @media (min-width: 1225px) {
     display: none;
   }
 
-  // @media (max-width: 1205px) {
-  //   display: row;
-  //   grid-template-columns: 1fr 1fr;
-  //   grid-column-gap: 16px;
-  //   grid-row-gap: 16px;
-  //   margin-top: 16px;
-  // }
+  @media (max-width: 1225px) {
+    display: row;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 16px;
+    grid-row-gap: 16px;
+    margin-top: 16px;
+  }
 `;
 
 const DesktopView = styled.div`
   display: initial;
 
-  @media (max-width: 1205px) {
+  @media (max-width: 1225px) {
     display: none;
   }
 `;
 
 const StickyScroll = styled.div`
   position: sticky;
-  top: 78px;
+  top: 104px;
 `;
 
 const SorryBanner = styled.div`
@@ -564,7 +574,7 @@ const SorryBanner = styled.div`
   min-height: 32px;
   padding: 8px 16px;
   text-align: center;
-  background-color: red;
+  // background-color: red;
   display: flex;
   align-items: center;
   justify-content: space-evenly;
@@ -609,17 +619,16 @@ const IframeContainerSmall = styled.div`
 const IframeContainerBig = styled.div`
   position: relative;
   width: 100%;
-  max-width: 875px;
   margin-left: auto;
   margin-right: auto;
   border-radius: 5px;
 
   #scaled-frame {
     position: absolute;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
+    // top: 0;
+    // left: 0;
+    // bottom: 0;
+    // right: 0;
     width: 100%;
     height: 100%;
     margin-bottom: 24px;
@@ -671,7 +680,7 @@ const ExpandButton = styled.button`
     margin-right: 24px;
   }
 
-  @media (max-width: 900px) {
+  @media (max-width: 906px) {
     display: none;
   }
 `;
@@ -702,6 +711,10 @@ const FAQCard = styled.div`
     font-size: 13px;
     color: #757a8a;
   }
+
+  a {
+    color: #871612;
+  }
 `;
 
 const Footer = styled.div`
@@ -709,8 +722,11 @@ const Footer = styled.div`
   background: black;
   padding: 16px;
   display: flex;
-  justify-content: center;
-  min-width: 375px;
+  justify-content: space-between;
+
+  div {
+    text-align: center;
+  }
 
   h4 {
     color: #f0f0f0;
@@ -719,7 +735,10 @@ const Footer = styled.div`
   a {
     margin-top: auto;
     margin-bottom: auto;
-    color: red;
+    color: #871612;
+    :hover {
+      color: white;
+    }
   }
 
   @media (max-width: 900px) {
@@ -746,6 +765,19 @@ const SeeMoreButton = styled.a`
   // ${(props) => props.mb && `margin-bottom: ${props.mb};`}
   // & {
   //   transform: scale(1.02);
+  }
+`;
+
+const KoloheBanner = styled.div`
+  width: 100%;
+  background: #871612;
+  text-align: center;
+  padding: 8px;
+  font-size: 16px;
+  font-weight: bold;
+
+  a {
+    color: white;
   }
 `;
 
@@ -788,4 +820,6 @@ export {
   MobileNavBar,
   FAQCard,
   Footer,
+  KoloheBanner,
+  Banner,
 };
