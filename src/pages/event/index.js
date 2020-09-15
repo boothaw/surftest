@@ -258,12 +258,10 @@ const EventPage = () => {
         <BodyContainer>
           <Main>
             <EventDetails>{renderCTA()}</EventDetails>
-
             {/* <div
               id="inplayer-108337"
               className="inplayer-paywall preview-frame"
             ></div> */}
-
             <div id="inplayer-108337" className="inplayer-paywall"></div>
 
             <div>
@@ -272,7 +270,6 @@ const EventPage = () => {
               </ExpandButton>
               {renderScoring()}
             </div>
-
             <MobileNavBar>{renderNavMenu()}</MobileNavBar>
             <MobileView>
               {" "}
@@ -596,3 +593,14 @@ const EventPage = () => {
 };
 
 export default EventPage;
+
+{
+  /* <div itemscope itemtype="https://schema.org/VideoObject">
+
+<script src="https://ssl.p.jwpcdn.com/live/channel-embed.js"></script>
+<script src="https://cdn.jwplayer.com/libraries/0FVQ0WpJ.js"></script>
+
+</div>;
+
+<script>jwLiveChannelSetup({ channelId: "4ItsVcs0" });</script>  */
+}
