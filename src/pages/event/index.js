@@ -62,6 +62,8 @@ const EventPage = () => {
       setIsRegistered(true);
     }
 
+    // console.log("email reggo", email);
+
     if (window.InplayerPaywall) {
       var paywall = new window.InplayerPaywall(
         "23b08bc0-c50c-4bb1-8606-6a2db940919e",
@@ -79,7 +81,7 @@ const EventPage = () => {
   }, []);
 
   const toggle = () => {
-    console.log("showing status", isShowing);
+    // console.log("showing status", isShowing);
     setIsShowing(!isShowing);
   };
 
@@ -88,6 +90,8 @@ const EventPage = () => {
     if (email.trim().length) {
       // STORE TO LOCAL STORAGE
       localStorage.setItem("SURF100.email", email);
+      console.log("handle save email", email);
+
       setIsRegistered(true);
 
       // PASS TO PARAMETER TO IFRAME... by using the email value in state.
@@ -145,7 +149,7 @@ const EventPage = () => {
     );
   };
 
-  const renderScoring = (email) => {
+  const renderScoring = () => {
     if (isShowing) {
       return (
         <IframeContainerBig
@@ -359,9 +363,9 @@ const EventPage = () => {
                       boards.
                     </li>
                   </ul>
+
                   {isRegistered ? (
                     <div>
-                      {console.log(email)}
                       <h3>Registration Complete!</h3>
                     </div>
                   ) : (
